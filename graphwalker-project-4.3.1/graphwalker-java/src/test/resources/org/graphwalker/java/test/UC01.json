@@ -1,0 +1,159 @@
+/*-
+ * #%L
+ * GraphWalker Java
+ * %%
+ * Copyright (C) 2005 - 2017 GraphWalker
+ * %%
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ * #L%
+ */
+{
+    "models": [
+        {
+            "edges": [
+                {
+                    "actions": [
+                        " num_of_books = 0;",
+                        " MAX_BOOKS = 5;"
+                    ],
+                    "id": "e0",
+                    "name": "e_init",
+                    "targetVertexId": "n4"
+                },
+                {
+                    "id": "e1",
+                    "name": "e_EnterBaseURL",
+                    "sourceVertexId": "n1",
+                    "targetVertexId": "n2"
+                },
+                {
+                    "id": "e2",
+                    "name": "e_SearchBook",
+                    "sourceVertexId": "n2",
+                    "targetVertexId": "n3"
+                },
+                {
+                    "id": "e3",
+                    "name": "e_StartBrowser",
+                    "sourceVertexId": "n4",
+                    "targetVertexId": "n1"
+                },
+                {
+                    "id": "e4",
+                    "name": "e_ClickBook",
+                    "sourceVertexId": "n3",
+                    "targetVertexId": "n5"
+                },
+                {
+                    "actions": [
+                        " num_of_books++;"
+                    ],
+                    "guard": "num_of_books<=MAX_BOOKS",
+                    "id": "e5",
+                    "name": "e_AddBookToCart",
+                    "sourceVertexId": "n5",
+                    "targetVertexId": "n6"
+                },
+                {
+                    "id": "e6",
+                    "name": "e_ShoppingCart",
+                    "sourceVertexId": "n6",
+                    "targetVertexId": "n7"
+                },
+                {
+                    "id": "e7",
+                    "name": "e_ShoppingCart",
+                    "sourceVertexId": "n3",
+                    "targetVertexId": "n7"
+                },
+                {
+                    "id": "e8",
+                    "name": "e_ShoppingCart",
+                    "sourceVertexId": "n5",
+                    "targetVertexId": "n7"
+                },
+                {
+                    "id": "e9",
+                    "name": "e_SearchBook",
+                    "sourceVertexId": "n7",
+                    "targetVertexId": "n3"
+                },
+                {
+                    "id": "e10",
+                    "name": "e_SearchBook",
+                    "sourceVertexId": "n6",
+                    "targetVertexId": "n3"
+                },
+                {
+                    "id": "e11",
+                    "name": "e_SearchBook",
+                    "sourceVertexId": "n5",
+                    "targetVertexId": "n3"
+                }
+            ],
+            "generator": "RandomPath(EdgeCoverage(100))",
+            "startElementId": "e0",
+            "vertices": [
+                {
+                    "id": "n4",
+                    "name": "v_BrowserStopped"
+                },
+                {
+                    "id": "n1",
+                    "name": "v_BrowserStarted",
+                    "properties": {
+                        "color": "yellow"
+                    }
+                },
+                {
+                    "id": "n2",
+                    "name": "v_BaseURL",
+                    "requirements": [
+                        "UC01 2.2.1"
+                    ]
+                },
+                {
+                    "id": "n3",
+                    "name": "v_SearchResult",
+                    "requirements": [
+                        "UC01 2.2.2"
+                    ]
+                },
+                {
+                    "id": "n5",
+                    "name": "v_BookInformation",
+                    "requirements": [
+                        "UC01 2.2.3"
+                    ]
+                },
+                {
+                    "id": "n6",
+                    "name": "v_OtherBoughtBooks"
+                },
+                {
+                    "id": "n7",
+                    "name": "v_ShoppingCart",
+                    "requirements": [
+                        "UC01 2.3"
+                    ]
+                }
+            ]
+        }
+    ]
+}

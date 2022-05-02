@@ -1,0 +1,13 @@
+
+.bp3-input-group.bp3-disabled, input.bp3-input[disabled], textarea.bp3-input[disabled],
+.bp3-control.bp3-switch.bp3-disabled, .bp3-control.bp3-switch.bp3-disabled > .bp3-control-indicator {
+  cursor: default !important;
+}
+
+textarea.bp3-input {
+  resize: none;
+}
+
+.bp3-switch > .bp3-control-indicator, .bp3-slider > * {
+  outline: none !important;
+}

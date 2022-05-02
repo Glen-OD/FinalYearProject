@@ -1,0 +1,46 @@
+# Eclipse stuff #
+#################
+.classpath
+.project
+.settings/
+
+# Intellij stuff #
+##################
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Temp stuff #
+##############
+doc/.~lock.*
+*~
+*.swp
+*.swo
+
+# Vidual Code #
+###############
+.vscode/
+
+
+# Build and unit tests stuff #
+#############################
+logs/
+**/target/
+**/bin/
+*.versionsBackup
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.next
+dependency-reduced-pom.xml
+release.properties
+work/
+amps-standalone/
+**/node_modules
+
+# Mac stuff #
+#############
+.DS_Store
+
+
+
