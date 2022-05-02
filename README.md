@@ -1,4 +1,4 @@
-GraphWalker fault tolerant heuristic implementation.
+GraphWalker fault tolerant heuristic implementations.
 
 Addition code made soley by me:
 glenfinalyearproject-graphwalker-project-4.3.1-graphwalker-core-src-main-java-org-graphwalker-core-machine:
