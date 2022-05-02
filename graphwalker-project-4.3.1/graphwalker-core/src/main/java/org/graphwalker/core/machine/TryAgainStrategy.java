@@ -29,9 +29,6 @@ public class TryAgainStrategy implements ExceptionStrategy {
     if(context.getCurrentElement() instanceof RuntimeEdge)
     {
       if(((RuntimeEdge) context.getCurrentElement()).getTargetVertex().getNodeStatus().equals(NodeStatus.FAILED)){
-        //Do nothing, as we are only double checking that we truly left the previous node to retry this failed node
-        //which may produce an exception on this edge, but we still want it to try execute the failed node again
-        //so we set execution status to executing
         context.setExecutionStatus(ExecutionStatus.EXECUTING);
       }
     }
@@ -42,15 +39,12 @@ public class TryAgainStrategy implements ExceptionStrategy {
         throw exception;
       }
 
-      //set Failed node to NodeStatus.FAILED, so we can check if it fails again.
       ((Vertex.RuntimeVertex) context.getCurrentElement()).setNodeStatus(NodeStatus.FAILED);
-
-      //Previous element from a node is an Edge
       Edge.RuntimeEdge nextEdge = (RuntimeEdge) context.getLastElement();
       //The source vertex of the edge would be the previous node from the failed node
       Vertex.RuntimeVertex vertex = nextEdge.getSourceVertex();
 
-      //Set execution status to Executing so the test doesn't stop running
+      //Set execution status to Executing
       //Set current element to the previous node
       //Set next element to be the edge connecting the previous node and the failed node
       context.setExecutionStatus(ExecutionStatus.EXECUTING);
