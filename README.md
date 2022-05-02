@@ -19,3 +19,6 @@ private ExceptionStrategy exceptionStrategy = new TryAgainStrategy();
 How to use BlackListStrategy:
 In MachineBase.java set the exceptionStrategy as:
 private ExceptionStrategy exceptionStrategy = new BlackListStrategy();
+
+
+You can look at the original implementation over at https://github.com/GraphWalker/graphwalker-project/tree/master/graphwalker-core/src/main/java/org/graphwalker/core
