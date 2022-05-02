@@ -1,6 +1,6 @@
 GraphWalker fault tolerant heuristic implementations.
 
-Addition code made soley by me:
+Additional code made soley by me:
 glenfinalyearproject-graphwalker-project-4.3.1-graphwalker-core-src-main-java-org-graphwalker-core-machine:
 BlackListStrategy.java, TryAgainStrategy.java, NodeStatus.java
 
@@ -9,7 +9,7 @@ SimpleMachine.java, ExecutionContext.java
 as well as glenfinalyearproject-graphwalker-project-4.3.1-graphwalker-core-src-main-java-org-graphwalker-core-model:
 Vertex.java
 
-Slight changes in:
+Slight changes made in:
 Context.java and MachineBase.java
 
 How to use TryAgainStrategy:
