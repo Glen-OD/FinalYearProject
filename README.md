@@ -1,4 +1,6 @@
 GraphWalker fault tolerant heuristic implementations.
+(1) when the assertion in a model node fails, go back from the node to the previous node and go the failed node again; 
+(2) when the assertion in a model node fails, walk back from the node to the previous node and continue the MBT execution from there to other nodes.
 
 Additional code made soley by me:
 glenfinalyearproject-graphwalker-project-4.3.1-graphwalker-core-src-main-java-org-graphwalker-core-machine:
@@ -22,3 +24,5 @@ private ExceptionStrategy exceptionStrategy = new BlackListStrategy();
 
 
 You can look at the original implementation over at https://github.com/GraphWalker/graphwalker-project/tree/master/graphwalker-core/src/main/java/org/graphwalker/core
+
+Github of the testing models https://github.com/vgarousi/MBTofTestinium
