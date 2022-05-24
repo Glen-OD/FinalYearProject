@@ -1,4 +1,5 @@
 ## GraphWalker fault tolerant heuristic implementations.
+----------------------------------------
 (1) when the assertion in a model node fails, go back from the node to the previous node and go the failed node again; 
 (2) when the assertion in a model node fails, walk back from the node to the previous node and continue the MBT execution from there to other nodes.
 
